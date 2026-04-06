@@ -1,0 +1,80 @@
+<!-- Hero Section -->
+<section class="hero-section" appScrollAnimation>
+    <div class="hero-content">
+        <h1 class="hero-title">Empowering Businesses with Cutting-Edge Software Solutions</h1>
+        <p class="hero-subtitle">We design, develop, and deliver scalable digital products for global clients</p>
+        <div class="hero-buttons">
+            <a href="/contact" class="btn btn-primary">Get Started</a>
+            <a href="/services" class="btn btn-outline">View Services</a>
+        </div>
+    </div>
+    <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<app-section class="stats-section">
+    <app-stats [stats]="stats"></app-stats>
+</app-section>
+
+<!-- Services Highlights Section -->
+<app-section title="Our Services" subtitle="Comprehensive solutions tailored to your needs">
+    <div class="services-grid">
+        <app-card *ngFor="let service of services" [title]="service.title" [description]="service.description"
+            [icon]="service.icon" [features]="service.features">
+        </app-card>
+    </div>
+</app-section>
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us">
+    <app-section title="Why Choose Taracoder" subtitle="Excellence in every project">
+        <div class="benefits-grid">
+            <div class="benefit-card" *ngFor="let benefit of benefits" appScrollAnimation>
+                <div class="benefit-icon">{{ benefit.icon }}</div>
+                <h4>{{ benefit.title }}</h4>
+                <p>{{ benefit.description }}</p>
+            </div>
+        </div>
+    </app-section>
+</section>
+
+<!-- Technologies Section -->
+<section class="technologies-section">
+    <app-section title="Technologies We Use" subtitle="Latest and most reliable tech stack">
+        <div class="tech-grid">
+            <div class="tech-item" *ngFor="let tech of technologies" appScrollAnimation>
+                <span class="tech-icon">{{ tech.icon }}</span>
+                <span class="tech-name">{{ tech.name }}</span>
+                <span class="tech-category">{{ tech.category }}</span>
+            </div>
+        </div>
+    </app-section>
+</section>
+
+<!-- Testimonials Section -->
+<app-section title="What Our Clients Say" subtitle="Success stories from our partners">
+    <div class="testimonials-grid">
+        <app-testimonial-card *ngFor="let testimonial of testimonials" [name]="testimonial.name"
+            [company]="testimonial.company" [message]="testimonial.message" [rating]="testimonial.rating"
+            [image]="testimonial.image">
+        </app-testimonial-card>
+    </div>
+</app-section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-content" appScrollAnimation>
+        <h2>Let's Build Something Great Together</h2>
+        <p>Transform your ideas into reality with our expert development team</p>
+        <a href="/contact" class="btn btn-light">Get in Touch</a>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<app-section>
+    <app-newsletter title="Stay Updated" subtitle="Subscribe to our newsletter for latest updates and insights">
+    </app-newsletter>
+</app-section>

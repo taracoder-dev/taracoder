@@ -1,0 +1,40 @@
+main {
+    min-height: calc(100vh - 200px);
+    flex: 1;
+    animation: fadeIn 0.5s ease-out;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Ensure proper layout structure */
+app-header {
+    flex-shrink: 0;
+}
+
+main {
+    flex: 1;
+}
+
+app-footer {
+    flex-shrink: 0;
+}
+
+/* Page transition animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Dark mode support */
+:host-context(.dark-mode) main {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}

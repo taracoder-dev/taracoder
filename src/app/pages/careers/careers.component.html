@@ -1,0 +1,136 @@
+<!-- Hero Banner -->
+<section class="hero careers-hero fade-in">
+    <div class="container">
+        <h1>Join Our Team</h1>
+        <p class="lead">Build Your Career with Taracoder</p>
+    </div>
+</section>
+
+<!-- Why Join Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Why Join Taracoder?</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4" *ngFor="let item of whyCareersItems; let i = index"
+                [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="card why-card scale-in">
+                    <div class="card-body text-center">
+                        <div class="why-icon">{{ item.icon }}</div>
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text small">{{ item.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Current Openings -->
+<section class="py-5">
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Current Openings</h2>
+        </div>
+        <div class="row">
+            <!-- Jobs List -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="jobs-list">
+                    <div class="job-item" *ngFor="let job of jobs; let i = index" (click)="selectJob(job)"
+                        [ngClass]="{ active: selectedJob?.id === job.id }" [style.animation-delay]="(i * 0.1) + 's'">
+                        <h5>{{ job.title }}</h5>
+                        <p class="mb-0 small">{{ job.department }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job Details -->
+            <div class="col-md-8">
+                <div *ngIf="selectedJob && !showApplicationForm" class="job-details scale-in">
+                    <div class="job-header">
+                        <h2>{{ selectedJob.title }}</h2>
+                        <div class="job-meta">
+                            <span class="badge bg-primary">{{ selectedJob.department }}</span>
+                            <span class="badge bg-secondary ms-2">{{ selectedJob.experience }}</span>
+                        </div>
+                    </div>
+
+                    <div class="job-description mt-4">
+                        <h4>About the Position</h4>
+                        <p>{{ selectedJob.description }}</p>
+                    </div>
+
+                    <div class="job-requirements mt-4">
+                        <h4>Requirements</h4>
+                        <ul class="requirements-list">
+                            <li *ngFor="let req of selectedJob.requirements">{{ req }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-cta mt-5">
+                        <button (click)="showForm()" class="btn btn-primary btn-lg">Apply Now</button>
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <div *ngIf="showApplicationForm && selectedJob" class="application-form scale-in">
+                    <div class="form-header">
+                        <h3>Apply for {{ selectedJob.title }}</h3>
+                    </div>
+
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="applicationData.name"
+                                name="name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="applicationData.email"
+                                name="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" [(ngModel)]="applicationData.phone"
+                                name="phone" placeholder="+91 9876-543-210" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="resume" class="form-label">Resume/CV</label>
+                            <input type="text" class="form-control" id="resume" [(ngModel)]="applicationData.resume"
+                                name="resume" placeholder="Paste link or description">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="coverLetter" class="form-label">Cover Letter</label>
+                            <textarea class="form-control" id="coverLetter" rows="5"
+                                [(ngModel)]="applicationData.coverLetter" name="coverLetter"
+                                placeholder="Tell us why you're a great fit for this role..."></textarea>
+                        </div>
+
+                        <div class="d-flex gap-3">
+                            <button type="button" (click)="submitApplication()" class="btn btn-primary">
+                                Submit Application
+                            </button>
+                            <button type="button" (click)="cancelApplication()" class="btn btn-outline-secondary">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact for Other Positions -->
+<section class="py-5 bg-light">
+    <div class="container text-center fade-in">
+        <h3>Don't see your dream role?</h3>
+        <p class="mb-4">We're always looking for talented individuals. Send us your resume and let's connect!</p>
+        <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+    </div>
+</section>

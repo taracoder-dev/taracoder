@@ -1,0 +1,159 @@
+.careers-hero {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.job-item {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.job-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.job-item.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-left-color: var(--accent-color);
+}
+
+.job-item h5 {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.job-item p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.job-details {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: #f8f9fa;
+}
+
+.job-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 2rem;
+}
+
+.job-header h2 {
+    margin: 0;
+}
+
+.job-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.job-description {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.job-requirements h4,
+.job-description h4 {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-light);
+}
+
+.requirements-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.job-cta {
+    padding-top: 1rem;
+}
+
+.application-form {
+    padding: 2rem;
+    border-radius: 12px;
+    background-color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.form-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.form-header h3 {
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+}
+
+.why-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.why-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .careers-hero {
+        min-height: 200px;
+    }
+
+    .job-header {
+        flex-direction: column;
+    }
+
+    .job-item:hover {
+        transform: translateX(0);
+    }
+}

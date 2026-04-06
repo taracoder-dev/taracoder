@@ -1,0 +1,54 @@
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Company Info -->
+            <div class="col-md-3 footer-section mb-4 mb-md-0">
+                <h5>Taracoder</h5>
+                <p class="footer-description">
+                    We're a team of passionate developers, designers, and innovators building scalable digital solutions
+                    for businesses worldwide.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 footer-section mb-4 mb-md-0">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li *ngFor="let link of quickLinks">
+                        <a [routerLink]="link.route">{{ link.label }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="col-md-3 footer-section mb-4 mb-md-0">
+                <h5>Our Services</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#services">Web Development</a></li>
+                    <li><a href="#services">Mobile Apps</a></li>
+                    <li><a href="#services">API Development</a></li>
+                    <li><a href="#services">Cloud Solutions</a></li>
+                    <li><a href="#services">UI/UX Design</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social -->
+            <div class="col-md-3 footer-section mb-4 mb-md-0">
+                <h5>Connect With Us</h5>
+                <p><strong>Email:</strong><br><a href="mailto:info@taracoder.com">info@taracoder.com</a></p>
+                <p><strong>Phone:</strong><br><a href="tel:+919876543210">+91 9876-543-210</a></p>
+                <div class="social-icons mt-3">
+                    <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer"
+                        title="{{ social.label }}" class="social-link">
+                        {{ social.icon }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; {{ currentYear }} Taracoder. All rights reserved. | Designed & Developed with ❤️ by Taracoder</p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,143 @@
+<!-- Hero Banner -->
+<section class="hero contact-hero fade-in">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p class="lead">We'd love to hear from you. Let's connect!</p>
+    </div>
+</section>
+
+<!-- Contact Information Cards -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let info of contactInfo; let i = index"
+                [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="card contact-info-card scale-in">
+                    <div class="card-body text-center">
+                        <div class="info-icon">{{ info.icon }}</div>
+                        <h5 class="card-title">{{ info.label }}</h5>
+                        <a [href]="info.link" class="info-link">{{ info.value }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="contact-form-wrapper fade-in">
+                    <h2 class="mb-4">Send us a Message</h2>
+
+                    <div *ngIf="submitSuccess" class="alert alert-success alert-dismissible fade show d-flex gap-2"
+                        role="alert">
+                        <span>✓</span>
+                        <span>Message sent successfully! We'll be in touch shortly.</span>
+                        <button type="button" class="btn-close" (click)="submitSuccess = false"></button>
+                    </div>
+
+                    <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" class="form-control" id="name" [(ngModel)]="formData.name" name="name"
+                                placeholder="John Doe" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="email" [(ngModel)]="formData.email"
+                                    name="email" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" [(ngModel)]="formData.phone"
+                                    name="phone" placeholder="+91 9876-543-210">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" [(ngModel)]="formData.company"
+                                name="company" placeholder="Your Company">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" [(ngModel)]="formData.subject"
+                                name="subject" placeholder="Project Details or Service Inquiry">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea class="form-control" id="message" rows="6" [(ngModel)]="formData.message"
+                                name="message" placeholder="Tell us about your project or inquiry..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Details Sidebar -->
+            <div class="col-lg-5">
+                <div class="contact-sidebar scale-in">
+                    <div class="details-section mb-5">
+                        <h3>Contact Details</h3>
+                        <ul class="contact-list">
+                            <li class="mb-4">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:info@taracoder.com">info@taracoder.com</a>
+                            </li>
+                            <li class="mb-4">
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+919876543210">+91 9876-543-210</a>
+                            </li>
+                            <li class="mb-4">
+                                <strong>Address:</strong><br>
+                                Bangalore, India
+                            </li>
+                            <li>
+                                <strong>Working Hours:</strong><br>
+                                Mon - Fri: 9:00 AM - 6:00 PM<br>
+                                Sat - Sun: Closed
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="details-section">
+                        <h3>Let's Connect</h3>
+                        <p>Follow us on social media for updates and insights:</p>
+                        <div class="social-links mt-3">
+                            <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
+                            <a href="https://linkedin.com" target="_blank" class="social-btn">LinkedIn</a>
+                            <a href="https://twitter.com" target="_blank" class="social-btn">Twitter</a>
+                            <a href="https://instagram.com" target="_blank" class="social-btn">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section (Placeholder) -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4 fade-in">Find Us Here</h2>
+        <div class="map-container scale-in">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8477656743297!2d77.59459961490909!3d12.935934490894625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14db2e1d1d1d%3A0x1d1d1d1d1d1d1d1d!2sBangalore!5e0!3m2!1sen!2sin!4v1234567890"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
