@@ -16,10 +16,10 @@ export class HeaderComponent implements OnInit {
 
     navigationLinks = [
         { label: 'Home', route: '/' },
-        { label: 'About', route: '/about' },
+        { label: 'About Us', route: '/about' },
         { label: 'Services', route: '/services' },
-        { label: 'Careers', route: '/careers' },
-        { label: 'Contact', route: '/contact' }
+        { label: 'Career', route: '/careers' },
+        { label: 'Contact Us', route: '/contact' }
     ];
 
     constructor() { }

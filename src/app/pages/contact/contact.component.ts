@@ -41,13 +41,13 @@ export class ContactComponent implements OnInit {
         {
             icon: '📞',
             label: 'Phone',
-            value: '+91 9876-543-210',
-            link: 'tel:+919876543210'
+            value: '+91 7764-904-152',
+            link: 'tel:+917764904152'
         },
         {
             icon: '📍',
             label: 'Address',
-            value: 'Bangalore, India',
+            value: 'Remote, India',
             link: '#'
         }
     ];
