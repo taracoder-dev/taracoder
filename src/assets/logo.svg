@@ -1,0 +1,19 @@
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="40" fill="none"/>
+  
+  <!-- Logo icon - stylized T -->
+  <g>
+    <!-- Vertical stem -->
+    <rect x="8" y="10" width="3" height="20" fill="#3b82f6" rx="1.5"/>
+    <!-- Horizontal top -->
+    <rect x="5" y="10" width="10" height="3" fill="#3b82f6" rx="1.5"/>
+    <!-- Gradient circle accent -->
+    <circle cx="18" cy="15" r="3" fill="#10b981" opacity="0.6"/>
+  </g>
+  
+  <!-- Text: Taracoder -->
+  <text x="28" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#1a202c">
+    Taracoder
+  </text>
+</svg>

@@ -31,10 +31,20 @@
     background-clip: text;
     letter-spacing: -0.5px;
     transition: all 0.3s ease;
+    margin-left: 0.5rem;
 }
 
 .logo:hover {
     transform: scale(1.05);
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    display: block;
 }
 
 .navbar-controls {

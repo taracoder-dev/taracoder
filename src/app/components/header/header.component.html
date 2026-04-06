@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top" [ngClass]="{ scrolled: isScrolled }">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <span class="logo">Taracoder</span>
+            <img src="logo.png" alt="Taracoder Logo" class="logo-img">
         </a>
         <div class="navbar-controls">
             <button class="dark-mode-toggle" (click)="toggleDarkMode()" title="Toggle Dark Mode">
@@ -10,6 +10,7 @@
             <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isNavCollapsed"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+                
             </button>
         </div>
         <div class="navbar-collapse" [ngClass]="{ show: !isNavCollapsed }">
